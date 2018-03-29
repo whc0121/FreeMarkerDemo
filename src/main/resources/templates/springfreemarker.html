@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+<h2>
+    <!--map 集合 -->
+    <#list citys?keys as c>
+       <#if c ="bj">
+           <li style="color: red"> ${c}--->${citys[c]}</li>
+           <#else>   <#-- 注意不能加结束标签 -->
+               <li style="color: green"> ${c}--->${citys[c]}</li>
+       </#if>
+
+    </#list>
+</h2>
+<hr>
+
+</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+</html>

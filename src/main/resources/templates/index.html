@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+<!--freemaeker的取值表达式-->
+<h1>
+    您好！${username}
+</h1>
+<hr>
+<h1>
+    对象类型—姓名：${user.username}==>${user.id}
+</h1>
+
+<hr>
+<h1>
+    <!-- 遍历集合  -->
+    <#list fruit as f>
+        <li>${f}</li>
+    </#list>
+</h1>
+<h2>
+    <!--map 集合 -->
+    <#list citys?keys as c>
+       <#if c ="bj">
+           <li style="color: red"> ${c}--->${citys[c]}</li>
+           <#else>   <#-- 注意不能加结束标签 -->
+               <li style="color: green"> ${c}--->${citys[c]}</li>
+       </#if>
+
+    </#list>
+</h2>
+<hr>
+    日期类型：<br>
+  ${date?date}  <br>
+  ${date?time}  <br>
+  ${date?datetime}  <br>
+    自定义类型
+${date?string("yyyy年MM月dd日 HH:mm:ss")}
+
+<hr>
+空值的处理：<br>
+${sex!"你猜是男是女"}<br><br>
+
+<#if sex??>
+    值存在
+    <#else>
+        空值
+</#if>
+</body>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+</html>
